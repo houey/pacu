@@ -7,6 +7,7 @@ import platform
 from queue import Queue
 import random
 import re
+import shlex
 import string
 import subprocess
 import sys
@@ -510,7 +511,7 @@ class Main:
 
     def parse_command(self, command):
         command = command.strip()
-        command = command.split(' ')
+        command = shlex.split(command)
 
         if command[0] == '':
             return
